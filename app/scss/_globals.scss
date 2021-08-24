@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam', sans-serif;
+    background-image: url('../../images/bg-tablet-pattern.svg');
+    background-position: top right;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &.noscroll {
+        overflow: hidden;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.5;
+}
+
+// Spacing
+.container {
+    max-width: 69.375rem;
+    margin: 0 auto;
+
+    &--pall {
+        padding-top: 4.375rem;
+        padding-right: 1.5rem;
+        padding-bottom: 4.375rem;
+        padding-left: 1.5rem;
+
+        @include breakpoint-up(large) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+
+    &--py {
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem;
+
+        @include breakpoint-up(large) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+
+    &--px {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    &--pt {
+        padding-top: 4.375rem;
+
+        @include breakpoint-up(large) {
+            padding-top: 6rem;
+        }
+    }
+
+    &--pr {
+        padding-right: 1.5rem;
+    }
+
+    &--pb {
+        padding-bottom: 4.375rem;
+
+        @include breakpoint-up(large) {
+            padding-bottom: 6rem;
+        }
+    }
+
+    &--pl {
+        padding-left: 1.5rem;
+    }
+}
+
+// Flexbox
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+
+    &-ai-fs {
+        align-items: flex-start;
+    }
+}
+
+// Buttons
+button,
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 0.6875rem 1.625rem;
+    background: $brightRed;
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    color: $veryLightGray;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: opacity 300ms ease-in-out;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.25);
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+
+}
+
+// Visibility
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
