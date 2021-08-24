@@ -32,7 +32,6 @@
 
     nav {
         position: relative;
-        //   background-color: $white;
         font-weight: 500;
         padding-top: 3rem;
         padding-bottom: 3rem;
@@ -100,26 +99,13 @@
                 margin-right: 32px;
             }
 
-            &::before {
-                content: "";
-                display: block;
-                position: absolute;
-                height: 5px;
-                left: 0;
-                right: 0;
-                bottom: -30px;
-                //   background: linear-gradient(to right, $limeGreen, $brightCyan);
-                opacity: 0;
-                transition: opacity 300ms ease-in-out;
-            }
-
             &:hover {
-                //   color: $darkBlue;
-
-                &::before {
-                    opacity: 1;
-                }
+                color: $darkGrayishBlue;
             }
         }
+    }
+
+    .button {
+        box-shadow: 0px 0.375rem 0.9375rem #f25f3a9c;
     }
 }
