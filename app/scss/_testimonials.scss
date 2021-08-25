@@ -1,11 +1,31 @@
 .testimonials {
     h1 {
-        font-size: 2.375rem;
+        font-size: 2rem;
         text-align: center;
+
+        @include breakpoint-up(large) {
+            font-size: 2.375rem;
+        }
     }
 
     .owl-carousel .owl-stage-outer {
-        height: 260px;
+        height: 320px;
+        margin-bottom: 20px;
+
+        @include breakpoint-up(large) {
+            height: 260px;
+            margin-bottom: 0;
+        }
+    }
+
+    .owl-theme .owl-dots .owl-dot span {
+        border: 1px solid $brightRed !important;
+        background: $veryLightGray !important;
+    }
+
+    .owl-theme .owl-dots .owl-dot.active span,
+    .owl-theme .owl-dots .owl-dot:hover span {
+        background: $brightRed !important;
     }
 
     .testimonials-card-container {
@@ -23,7 +43,8 @@
 
             .review {
                 background: #FAFAFA;
-                padding: 30px 46px 30px;
+                // padding: 30px 46px 30px;
+                padding: 30px 15px 30px;
             }
         }
     }

@@ -1,25 +1,52 @@
 .intro {
-    margin-top: 3.125rem;
+    flex-direction: column;
+    padding: 0 0.5rem;
+
+    @include breakpoint-up(large) {
+        margin-top: 3.125rem;
+        flex-direction: row;
+        padding-left: 1.5rem;
+        padding-right: 0;
+    }
 
     &__text {
         flex: 1;
         align-self: center;
+        text-align: center;
+        padding: 0 0.5rem;
+
+        @include breakpoint-up(large) {
+            text-align: left;
+            padding: 0;
+        }
 
         h1 {
-            font-size: 52px;
+            font-size: 2.375rem;
             line-height: 1.2;
             margin-top: 0;
             margin-bottom: 0.6em;
+
+            @include breakpoint-up(large) {
+                font-size: 3.25rem;
+            }
         }
 
         p {
             margin-bottom: 2rem;
-            width: 22rem;
+
+            @include breakpoint-up(large) {
+                width: 22rem;
+            }
         }
     }
 
     &__image {
         flex: 1;
+        order: -1;
+
+        @include breakpoint-up(large) {
+            order: 1;
+        }
 
         img {
             width: 100%;

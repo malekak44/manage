@@ -5,10 +5,10 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Be Vietnam', sans-serif;
-    background-image: url('../../images/bg-tablet-pattern.svg');
-    background-repeat: no-repeat;
-    background-position: 112% -5%;
-    background-size: 51%;
+    // background-image: url('../images/bg-tablet-pattern.svg');
+    // background-repeat: no-repeat;
+    // background-position: 112% -5%;
+    // background-size: 51%;
 
     &.noscroll {
         overflow: hidden;
@@ -33,12 +33,16 @@ h4 {
 }
 
 p {
-    line-height: 1.5;
+    line-height: 2;
     color: $darkGrayishBlue;
+
+    @include breakpoint-up(large) {
+        line-height: 1.5;
+    }
 }
 
 main {
-    background-image: url(../../images/bg-tablet-pattern.svg);
+    background-image: url(../images/bg-tablet-pattern.svg);
     background-repeat: no-repeat;
     background-position: -70% 75%;
     background-size: 53%;

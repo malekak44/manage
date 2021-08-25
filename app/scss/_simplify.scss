@@ -1,17 +1,37 @@
 .simplify {
-    margin-top: 12rem;
-    height: 14rem;
+    display: block;
+    height: auto;
+    margin-top: 3.5rem;
     background: $brightRed;
-    background-image: url('../../images/bg-simplify-section-desktop.svg');
+    background-image: url('../images/bg-simplify-section-desktop.svg');
+
+    @include breakpoint-up(large) {
+        display: flex;
+        margin-top: 12rem;
+        height: 14rem;
+    }
 
     .container {
         flex: 1;
+        display: block;
+        text-align: center;
+        padding: 3rem 1.5rem;
+
+        @include breakpoint-up(large) {
+            display: flex;
+            text-align: left;
+            padding: 0;
+        }
 
         h1 {
             color: $veryLightGray;
             font-size: 2.4375rem;
-            width: 30rem;
             line-height: 1.1;
+            width: auto;
+
+            @include breakpoint-up(large) {
+                width: 30rem;
+            }
         }
 
         div {

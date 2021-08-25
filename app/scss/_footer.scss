@@ -5,26 +5,63 @@
     &__content {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        padding: 4rem 0;
+        align-items: center;
+        flex-direction: column;
+        padding: 4rem 0 2rem;
+
+        @include breakpoint-up(large) {
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 4rem 0;
+        }
     }
 
     &__images {
         flex: 0.8;
+        order: 2;
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint-up(large) {
+            display: block;
+            order: -1;
+        }
     }
 
     &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        @include breakpoint-up(large) {
+            margin-bottom: 0;
+            justify-content: flex-start;
+        }
+
         img {
             margin-top: 0.3125rem;
         }
     }
 
     &__social {
-        margin-top: 5rem;
+        margin-top: 0;
+        order: -1;
+        margin-bottom: 2rem;
+
+        @include breakpoint-up(large) {
+            margin-top: 5rem;
+            margin-bottom: 0;
+        }
 
         svg {
             cursor: pointer;
             transition: all 300ms ease-in-out;
+            width: 2.375rem;
+
+            @include breakpoint-up(large) {
+                width: auto;
+            }
 
             &:not(:last-child) {
                 margin-right: 10px;
@@ -40,8 +77,16 @@
 
     &__nav {
         flex: 1;
+        order: 1;
         display: flex;
         justify-content: space-between;
+        width: 70%;
+        margin-bottom: 3rem;
+
+        @include breakpoint-up(large) {
+            width: auto;
+            margin-bottom: 0;
+        }
 
         .footer__links {
             display: flex;
@@ -81,6 +126,13 @@
 
     &__copy {
         flex: 1.2;
+        order: -1;
+        margin-bottom: 3rem;
+
+        @include breakpoint-up(large) {
+            order: 1;
+            margin-bottom: 0;
+        }
 
         p {
             margin-bottom: 0;
@@ -88,5 +140,10 @@
             font-size: 14px;
             margin-top: 69px;
         }
+    }
+
+    .hide-for-desktop {
+        order: 3;
+        font-size: 0.9375rem;
     }
 }
